@@ -1,6 +1,7 @@
 @import "../../styles/mixin";
 @import "../../styles/variables";
 
+// Promo Start
 .promo__container {
   width: 100%;
   height: 150px;
@@ -46,3 +47,183 @@
     }
   }
 }
+// Promo End
+
+// Product Start
+.product__container {
+  width: 100%;
+  // height: 350px;
+  // background-color: red;
+  .pro__content {
+    width: 100%;
+    height: 100%;
+    padding: 50px 40px;
+    .pro__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 14px;
+        margin-top: 20px;
+        text-align: center;
+        color: gray;
+        line-height: 27px;
+      }
+    }
+    .pro__action__container {
+      width: 100%;
+      .pa__content {
+        width: 100%;
+        .pa__header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h6 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-bottom: 2px solid lightblue;
+            line-height: 40px;
+          }
+        }
+        .pa__lists {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          overflow-x: scroll;
+          margin-top: 30px;
+          cursor: all-scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          .pa__items {
+            min-width: 180px;
+            height: 250px;
+            border-radius: 10px;
+            // background-color: red;
+            border: 1px solid #ddd;
+            img {
+              width: 100%;
+              height: 80%;
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              object-fit: contain;
+            }
+            h3 {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Product End
+
+// Home Product Start
+.home__product__container {
+  width: 100%;
+  height: 100%;
+  background-color: #f1f3f6;
+  .hp__content {
+    width: 100%;
+    padding: 20px 40px;
+    height: 100%;
+    .hp__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h6 {
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      a {
+        font-size: 13px;
+        border-bottom: 1px solid lightgray;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+    .home__pro__actions {
+      width: 100%;
+      margin-top: 30px;
+      .hpa__content {
+        width: 100%;
+        height: 100%;
+        .items__lists {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          overflow-x: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .product__card {
+            min-width: 230px;
+            height: 100%;
+            // border: 1px solid $color-background;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: $color-white;
+            .card__header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-right: 15px;
+              i {
+                font-size: 1.3rem;
+                color: $color-primary;
+              }
+            }
+            img {
+              // width: 100px;
+              height: 150px;
+              margin: 0px auto;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            h6 {
+              font-size: 13px;
+              margin-top: 10px;
+            }
+            p {
+              font-size: 15px;
+              font-weight: 600;
+              margin-top: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              margin-bottom: 10px;
+              span {
+                font-size: 11px;
+                color: gray;
+                font-weight: lighter;
+              }
+            }
+            .btn-addCart {
+              width: 100%;
+              background-color: $color-primary;
+              height: 36px;
+              border-radius: 4px;
+              font-size: 14px;
+              color: $color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Home Product End

@@ -52,7 +52,7 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+        {/* <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button
             className="btn btn-outline-dark me-2"
             onClick={() => setFilter(data)}
@@ -83,11 +83,11 @@ const Product = () => {
           >
             Electronics
           </button>
-        </div>
+        </div> */}
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3 mb-4">
+              {/* <div className="col-md-3 mb-4">
                 <div className="card h-100 text-center p-4" key={product.id}>
                   <img
                     src={product.image}
@@ -108,6 +108,21 @@ const Product = () => {
                     </Link>
                   </div>
                 </div>
+              </div> */}
+
+              <div className="product__card">
+                <div className="card__header">
+                  <div></div>
+                  <i class="bx bx-heart"></i>
+                </div>
+                <img src={product.image} alt="" />
+                <h6> {product.title.substring(0, 22)}... </h6>
+                <p>
+                  <span> Price: </span> ${product.price}
+                </p>
+                <Link to={`/products/${product.id}`} className="btn-addCart">
+                  Add to Cart
+                </Link>
               </div>
             </>
           );
@@ -118,7 +133,7 @@ const Product = () => {
 
   return (
     <Fragment>
-      <div className="container my-5 py-5">
+      {/* <div className="container my-5 py-5">
         <div className="row">
           <div className="col-12 mb-5">
             <h1 className="display-6 fw-bolder text-center">Latest Product</h1>
@@ -126,6 +141,26 @@ const Product = () => {
           </div>
           <div className="row justify-content-center">
             {loading ? <Loading /> : <ShowProduct />}
+          </div>
+        </div>
+      </div> */}
+
+      <div className="home__product__container">
+        <div className="hp__content">
+          <div className="hp__header">
+            <h6> Category </h6>
+            <a href="#">
+              See More <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+          <hr />
+
+          <div className="home__pro__actions">
+            <div className="hpa__content">
+              <div className="items__lists">
+                {loading ? <Loading /> : <ShowProduct />}
+              </div>
+            </div>
           </div>
         </div>
       </div>
