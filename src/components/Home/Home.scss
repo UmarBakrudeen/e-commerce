@@ -1,0 +1,48 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.promo__container {
+  width: 100%;
+  height: 150px;
+  background-color: $color-background;
+  .promo__content {
+    width: 85%;
+    margin: 0px auto;
+    height: 100%;
+    .promo__lists {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .promo__items {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+        i {
+          font-size: 1rem;
+          color: $color-primary;
+          border: 2px solid $color-primary;
+          border-radius: 50%;
+          padding: 7px;
+        }
+        .details {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 3px;
+          h3 {
+            font-size: 17px;
+            font-weight: bold;
+          }
+          p {
+            font-size: 10px;
+            font-weight: 600;
+            color: $color-secondary;
+          }
+        }
+      }
+    }
+  }
+}
