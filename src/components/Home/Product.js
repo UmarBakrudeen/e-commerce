@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import Skeleton from "react-loading-skeleton";
 import Header from "../../shared/Header/Header";
+// import sofa from '../assets/images/sofa.jpg';
+import sofa from '../../assets/images/sofa.jpg';
+import sofa2 from '../../assets/images/sofa2.jpg';
+
+import './product.scss';
+
+// import sofa from '../'
 
 const Product = () => {
   const { id } = useParams();
@@ -46,9 +53,25 @@ const Product = () => {
   };
 
   const ShowProduct = () => {
+//   const thumbs=document.querySelector(".p-image").children;
+
+    function imageChange(event)
+{
+//   // const thumbs=document.querySelector(".p-image").children;
+
+//   document.querySelector(".pro-img").src=event.children[0].src
+//   for(let i=0; i<thumbs.length;i++)
+//   {
+//     thumbs[i].classList.remove("active");
+//   }
+//   event.classList.add("active");
+}
+
     return (
+
+
       <>
-        <div className="col-md-6">
+        {/* <div className="col-md-6">
           <img
             src={product.image}
             alt={product.title}
@@ -74,7 +97,58 @@ const Product = () => {
           <Link to="/cart" className="btn btn-dark ms-2 px-3 py-2">
             Go to Cart
           </Link>
+        </div> */}
+
+
+<div className="product-container">
+
+       <div className="p-container">
+        <div className="p-image">
+        <img src={sofa2} className="pro-img" onClick={imageChange(this)}/>
         </div>
+        <div className="child-image">
+        <div className="c-image1">
+          <img src={sofa2} onClick={imageChange(this)}/>
+        </div>
+        <div className="c-image2">
+          <img src={sofa2} onClick={imageChange(this)} />
+        </div>
+        <div className="c-image3">
+          <img src={sofa2} onClick={imageChange(this)}/>
+        </div>
+        </div>
+
+       </div>
+       <div className="product-content">
+        <h3>llana</h3>
+        <p>Complete complaints require the physical or electronic signature of the owner. </p>
+       <div className="price-details">
+       <strong>&#36;</strong>
+       <strong>430.99</strong>
+       </div>
+       <div className="review-container">
+       <div className="review">
+       <i class="fa fa-star"></i>
+       <i class="fa fa-star"></i>
+       <i class="fa fa-star"></i>
+       <i class="fa fa-star"></i>
+       {/* <i class="fa-solid fa-star-half-stroke"></i> */}
+       <i class="fa fa-star"></i>
+       </div>
+       <div className="rating">
+       <a href="#">441 Reviews</a>
+       </div>
+       </div>
+       
+
+       <div className="btn-holder">
+        <button className="btn-buy">Buy Now</button>
+        <button className="btn-add">Add to basket</button>
+       </div>
+       </div>
+
+       </div>
+      
       </>
     );
   };
