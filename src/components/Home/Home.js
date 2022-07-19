@@ -1,4 +1,4 @@
-import React, { useState, useRef, Component } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Home.scss";
 
 import Header from "../../shared/Header/Header";
@@ -7,6 +7,27 @@ import ReactCarousel from "../../Reusable/carousel";
 import Footer from "../../shared/Footer/Footer";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+  const [filter, setFilter] = useState(data);
+  const [loading, setLoading] = useState(false);
+  let componentMounted = true;
+
+  useEffect(() => {
+    const getProduct = async () => {
+      setLoading(true);
+      const response = await fetch("http://fakestoreapi.com/products");
+      if (componentMounted) {
+        setData(await response.clone().json());
+        setFilter(await response.json());
+        setLoading(false);
+        console.log("filter::", filter);
+      }
+      return () => {
+        componentMounted = false;
+      };
+    };
+    getProduct();
+  }, []);
   return (
     <div>
       <Header />
@@ -67,52 +88,45 @@ const Home = () => {
               <div className="pa__lists">
                 <div className="pa__items">
                   <img
-                    src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                    src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+                    alt=""
+                  />
+                  <h3> Bags </h3>
+                </div>
+                <div className="pa__items">
+                  <img
+                    src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
                     alt=""
                   />
                   <h3> Mens </h3>
                 </div>
                 <div className="pa__items">
                   <img
-                    src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                    src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
                     alt=""
                   />
-                  <h3> Mens </h3>
+                  <h3> Jewelery's </h3>
                 </div>
                 <div className="pa__items">
                   <img
-                    src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                    src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
                     alt=""
                   />
-                  <h3> Mens </h3>
+                  <h3> Electronics </h3>
                 </div>
                 <div className="pa__items">
                   <img
-                    src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                    src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
                     alt=""
                   />
-                  <h3> Mens </h3>
+                  <h3> Women's </h3>
                 </div>
                 <div className="pa__items">
                   <img
-                    src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+                    src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-01.jpg"
                     alt=""
                   />
-                  <h3> Mens </h3>
-                </div>
-                <div className="pa__items">
-                  <img
-                    src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
-                    alt=""
-                  />
-                  <h3> Mens </h3>
-                </div>
-                <div className="pa__items">
-                  <img
-                    src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
-                    alt=""
-                  />
-                  <h3> Mens </h3>
+                  <h3> Mobile Phone </h3>
                 </div>
               </div>
             </div>
@@ -120,6 +134,66 @@ const Home = () => {
         </div>
       </div>
       <Product />
+
+      <div className="ad__container">
+        <div className="ad__content">
+          <div className="ad__card__lists">
+            <div className="adc__items">
+              <img
+                src="https://gomonad.com/images/nearby.4150bd3d6c3423b1dfbbaa409406ed29.png"
+                alt=""
+              />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                pariatur architecto saepe rerum hic similique magni voluptatum
+              </p>
+            </div>
+            <div className="adc__items">
+              <img
+                src="https://gomonad.com/images/promo2.5e1ca1eb4a2df1ed8686f24e2efaaf6a.png "
+                alt=""
+              />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                pariatur architecto saepe rerum hic similique magni voluptatum
+              </p>
+            </div>
+            <div className="adc__items">
+              <img
+                src="https://gomonad.com/images/promo3.00b29366f0a4db65277247f74a9fb70c.png"
+                alt=""
+              />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                pariatur architecto saepe rerum hic similique magni voluptatum
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div className="app__content">
+            <div className="app__items">
+              <h1> Download our App </h1>
+              <div className="img__content">
+                <img
+                  src="https://gomonad.com/images/btn-g.e6fd788e1f93d173dffdb759081cf06c.png"
+                  alt=""
+                />
+                <img
+                  src="https://gomonad.com/images/btn-i.2928803a8e87fbab2e101bc38aa1a758.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="app__items">
+              <img
+                src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1997/posts/39422/image-upload/544897A1-ACC9-40F9-8C5F-354468024ACF.jpeg"
+                alt=""
+                className="app__img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <Footer />
     </div>
   );

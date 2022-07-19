@@ -120,9 +120,9 @@ const Product = () => {
                 <p>
                   <span> Price: </span> ${product.price}
                 </p>
-                <Link to={`/products/${product.id}`} className="btn-addCart">
+                <a href={`/products/${product.id}`} className="btn btn-cart">
                   Add to Cart
-                </Link>
+                </a>
               </div>
             </>
           );
@@ -153,7 +153,6 @@ const Product = () => {
               See More <i class="bx bx-right-arrow-alt"></i>
             </a>
           </div>
-          <hr />
 
           <div className="home__pro__actions">
             <div className="hpa__content">

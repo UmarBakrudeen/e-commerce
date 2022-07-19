@@ -95,20 +95,19 @@
           display: flex;
           align-items: center;
           gap: 20px;
-          overflow-x: scroll;
           margin-top: 30px;
-          cursor: all-scroll;
 
           &::-webkit-scrollbar {
             display: none;
           }
 
           .pa__items {
-            min-width: 180px;
+            min-width: 200px;
             height: 250px;
             border-radius: 10px;
             // background-color: red;
             border: 1px solid #ddd;
+            cursor: pointer;
             img {
               width: 100%;
               height: 80%;
@@ -120,6 +119,9 @@
             }
             h3 {
               text-align: center;
+              font-size: 15px;
+              font-weight: 600;
+              margin-top: 15px;
             }
           }
         }
@@ -138,6 +140,7 @@
     width: 100%;
     padding: 20px 40px;
     height: 100%;
+    padding-bottom: 10%;
     .hp__header {
       display: flex;
       align-items: center;
@@ -148,7 +151,6 @@
       }
       a {
         font-size: 13px;
-        border-bottom: 1px solid lightgray;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -161,6 +163,7 @@
         width: 100%;
         height: 100%;
         .items__lists {
+          width: 100%;
           display: flex;
           align-items: center;
           gap: 15px;
@@ -170,12 +173,17 @@
             display: none;
           }
           .product__card {
+            width: 100%;
             min-width: 230px;
             height: 100%;
             // border: 1px solid $color-background;
             border-radius: 10px;
             padding: 15px;
             background-color: $color-white;
+            &:hover {
+              box-shadow: 0px 0px 14px #ddd;
+              scale: 0.3;
+            }
             .card__header {
               display: flex;
               align-items: center;
@@ -183,7 +191,7 @@
               margin-right: 15px;
               i {
                 font-size: 1.3rem;
-                color: $color-primary;
+                color: $color-pink;
               }
             }
             img {
@@ -193,10 +201,12 @@
               display: flex;
               align-items: center;
               justify-content: center;
+              overflow: hidden;
             }
             h6 {
               font-size: 13px;
               margin-top: 10px;
+              font-weight: 600;
             }
             p {
               font-size: 15px;
@@ -205,20 +215,21 @@
               display: flex;
               align-items: center;
               gap: 10px;
-              margin-bottom: 10px;
+              margin-bottom: 20px;
               span {
                 font-size: 11px;
                 color: gray;
                 font-weight: lighter;
               }
             }
-            .btn-addCart {
+            .btn-cart {
               width: 100%;
               background-color: $color-primary;
               height: 36px;
               border-radius: 4px;
               font-size: 14px;
               color: $color-white;
+              // padding: 10px 55px;
             }
           }
         }
@@ -227,3 +238,72 @@
   }
 }
 // Home Product End
+
+// Advertisement Container Style Start
+.ad__container {
+  width: 100%;
+  height: 100%;
+  .ad__content {
+    width: 100%;
+    height: 100%;
+    padding: 5% 40px;
+    .ad__card__lists {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      .adc__items {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        background-color: $color-white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd;
+        img {
+          height: 80px;
+          margin-top: 20px;
+        }
+        p {
+          text-align: center;
+          font-size: 13px;
+          font-weight: 600;
+          color: $color-primary;
+          margin-top: 20px;
+        }
+      }
+    }
+    .app__content {
+      width: 100%;
+      margin-top: 3%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .app__items {
+        h1 {
+          font-weight: 600;
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+          color: $color-primary;
+        }
+        .img__content {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          img {
+            height: 70px;
+            cursor: pointer;
+          }
+        }
+        .app__img {
+          height: 210px;
+        }
+      }
+    }
+  }
+}
+// Advertisement Container Style End

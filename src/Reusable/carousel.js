@@ -17,7 +17,7 @@ function ReactCarousel() {
         <Carousel.Item>
           <img
             className="d-block"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4eZpLMqF13RRX9QrIAniQJG0aLEyweI0TZ9ekxTUCGnZHFdu_l_qyHfBsIPRcR63IwMg&usqp=CAU"
+            src="https://media.istockphoto.com/photos/small-shipping-packages-on-a-notebook-with-the-inscription-online-picture-id1311600080?b=1&k=20&m=1311600080&s=170667a&w=0&h=Gt5ksAkJ8dk4R4yM6Y5CGc0YQ6Sd142gh_Hj9q9DVns="
             alt="Second slide"
           />
         </Carousel.Item>
