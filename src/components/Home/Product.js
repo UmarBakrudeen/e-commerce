@@ -9,7 +9,7 @@ import Header from "../../shared/Header/Header";
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setxLoading] = useState(false);
 
   const dispatch = useDispatch();
   const addProduct = (product) => {
